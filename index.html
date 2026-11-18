@@ -3661,7 +3661,7 @@ function whisper() {
   setTimeout(() => w.remove(), 1000);
 }
 function setDoom(v) { doom = v; document.documentElement.style.setProperty("--doom", v.toFixed(2)); document.body.classList.toggle("doomed", v > 0); }
-const MARKS = "̴̵̶̷̸̖̗̘̙̜̝̣̤̥̦̩̪̫̰̱̀́̂̃̈̊͐͑͒͗͛";
+const MARKS = "̴̵̶̷̸̖̗̘̙̜̝̣̤̥̦̩̪̫̰̱̀́̂̃̈̊͐͑͒͗͛";
 const zalgo = (str, k) => Array.from(str).map(c => c === " " ? c : c + Array.from({ length: Math.floor(Math.random() * (k + 1)) }, () => MARKS[Math.floor(Math.random() * MARKS.length)]).join("")).join("");
 function drawStatic(t) {
   if (t < staticUntil) {
@@ -5343,7 +5343,7 @@ function rampDoom(to, ms) {
   rampT = setInterval(() => { const q = Math.min(1, (performance.now() - t0) / ms); setDoom(from + (to - from) * q); if (q >= 1) clearInterval(rampT); }, 60);
 }
 /* ================= the "I love you" signal corruption ================= */
-const TG_GLYPHS = "▓▒░█▚▞#@%&ΞΨ¥§¿?!/\\|<>01ØΔ", TG_ZAL = ["̴", "̵", "̶", "̷", "̸", "̕", "̛", "̀", "́", "͘", "̡", "̢", "̧", "̨", "̴", "҉"];
+const TG_GLYPHS = "▓▒░█▚▞#@%&ΞΨ¥§¿?!/\\|<>01ØΔ", TG_ZAL = ["̴", "̵", "̶", "̷", "̸", "̕", "̛", "̀", "́", "͘", "̡", "̢", "̧", "̨", "̴", "҉"];
 const tgZalgo = ch => ch === " " ? ch : ch + Array.from({ length: 2 + Math.floor(rand(0, 3)) }, () => pick(TG_ZAL)).join("");
 let tgTimers = [], tgLoopT = null, tgOn = false;
 const tgSpans = () => [...$("finalTitle").children].filter(e => e.tagName === "SPAN");
